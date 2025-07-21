@@ -1,1 +1,18 @@
-<p>task-item works!</p>
+<div class="task-item" [class.completed]="task.status === taskStatus.Completed">
+  <div class="task-content">
+    <app-checkbox
+      [checked]="task.status === taskStatus.Completed"
+      (checkedChange)="onToggleComplete()"
+      class="task-checkbox"
+    ></app-checkbox>
+    <span
+      class="task-text"
+      [class.completed]="task.status === taskStatus.Completed"
+    >
+      {{ task.name }}
+    </span>
+  </div>
+  <app-button variant="danger" (click)="onDelete()" class="delete-button">
+    Delete
+  </app-button>
+</div>

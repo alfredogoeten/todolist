@@ -1,0 +1,9 @@
+<div class="todo-container">
+  <h1>My Todo List</h1>
+  <app-task-list
+    [tasks]="tasks"
+    (taskAdded)="onTaskAdded($event)"
+    (taskToggled)="onTaskToggled($event)"
+    (taskDeleted)="onTaskDeleted($event)"
+  ></app-task-list>
+</div>
