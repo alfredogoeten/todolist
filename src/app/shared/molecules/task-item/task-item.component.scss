@@ -19,11 +19,17 @@
   align-items: center;
   gap: 0.75rem;
   flex: 1;
+  min-width: 0;
 }
 
 .task-text {
   font-size: 1rem;
   color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  min-width: 0;
 }
 
 .task-text.completed {
@@ -31,7 +37,7 @@
   color: #999;
 }
 
-/* Hide the default checkbox */
 .task-checkbox {
   margin: 0;
+  flex-shrink: 0;
 }
