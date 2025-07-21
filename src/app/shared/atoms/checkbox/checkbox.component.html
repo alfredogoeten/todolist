@@ -1,5 +1,10 @@
-<label class="checkbox-container">
-  <input type="checkbox" [checked]="checked" (change)="onChange($event)">
-  <span class="checkmark"></span>
+<label>
+  <input
+    class="uk-checkbox"
+    type="checkbox"
+    [checked]="checked"
+    [disabled]="disabled"
+    (change)="onChange($event)"
+  />
   <ng-content></ng-content>
 </label>

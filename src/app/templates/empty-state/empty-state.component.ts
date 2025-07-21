@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './empty-state.component.html',
   styleUrl: './empty-state.component.scss'
 })
-export class EmptyState {
+export class EmptyStateComponent {
 
 }

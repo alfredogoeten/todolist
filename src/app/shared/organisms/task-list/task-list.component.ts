@@ -1,12 +1,14 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 import { TaskItemComponent } from "../../molecules/task-item/task-item.component";
 import { TaskInputComponent } from "../../molecules/task-input/task-input.component";
+import { EmptyStateComponent } from "../../../templates/empty-state/empty-state.component";
 import { Task } from "../../models/task.model";
+
 
 @Component({
   selector: "app-task-list",
   standalone: true,
-  imports: [TaskItemComponent, TaskInputComponent],
+  imports: [TaskItemComponent, TaskInputComponent, EmptyStateComponent],
   templateUrl: "./task-list.component.html",
   styleUrl: "./task-list.component.scss",
 })

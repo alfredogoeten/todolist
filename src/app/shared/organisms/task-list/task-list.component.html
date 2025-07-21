@@ -1,5 +1,5 @@
 <div class="task-list">
-  <app-task-input (addTask)="onAddTask($event)"></app-task-input>
+ <app-task-input (addTask)="onAddTask($event)"></app-task-input>
   
   <div class="tasks">
     @for (task of tasks; track task.id) {
@@ -9,9 +9,7 @@
         (delete)="onDeleteTask($event)"
       ></app-task-item>
     } @empty {
-      <div class="empty-state">
-        No tasks yet. Add one above!
-      </div>
+      <app-empty-state></app-empty-state>
     }
   </div>
 </div>

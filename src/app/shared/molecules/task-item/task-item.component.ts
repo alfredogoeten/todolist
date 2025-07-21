@@ -1,13 +1,11 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 import { CheckboxComponent } from "../../atoms/checkbox/checkbox.component";
-import { ButtonComponent } from "../../atoms/button/button.component";
-import { IconComponent } from "../../atoms/icon/icon.component";
 import { Task, TaskStatus } from "../../models/task.model";
 
 @Component({
   selector: "app-task-item",
   standalone: true,
-  imports: [CheckboxComponent, ButtonComponent, IconComponent],
+  imports: [CheckboxComponent],
   templateUrl: "./task-item.component.html",
   styleUrl: "./task-item.component.scss",
 })
