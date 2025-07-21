@@ -1,1 +1,11 @@
-<p>button works!</p>
+<button
+  [class]="buttonClasses"
+  [type]="type"
+  [disabled]="disabled || loading"
+  (click)="onClick($event)"
+>
+  @if (loading) {
+    <span class="btn-loading-spinner"></span>
+  }
+  <ng-content></ng-content>
+</button>

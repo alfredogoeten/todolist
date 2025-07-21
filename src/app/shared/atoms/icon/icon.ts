@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
-
+import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-icon',
-  imports: [],
+  standalone: true,
   templateUrl: './icon.html',
   styleUrl: './icon.css'
 })
-export class Icon {
-
+export class IconComponent {
+  @Input() name: string = '';
+  @Input() title: string = '';
+  @Input() size: 'small' | 'medium' | 'large' = 'medium';
+  
+  get iconClasses(): string {
+    return `icon icon-${this.name} icon-${this.size}`;
+  }
 }

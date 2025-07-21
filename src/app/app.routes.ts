@@ -1,19 +1,19 @@
 import { Routes } from '@angular/router';
-import { TasksPage } from './features/tasks/pages/tasks-page/tasks-page';
+import { Todo } from './pages/todo/todo';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'tasks',
+    redirectTo: 'todo',
     pathMatch: 'full',
   },
   {
-    path: 'tasks',
-    component: TasksPage,
-    title: 'My Tasks',
+    path: 'todo',
+    component: Todo,
+    title: 'My Todo List',
   },
   {
     path: '**',
-    redirectTo: 'tasks',
+    redirectTo: 'todo',
   },
 ];
