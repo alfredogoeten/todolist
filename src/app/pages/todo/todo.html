@@ -1,7 +1,7 @@
 <div class="todo-container">
-  <h1>My Todo List</h1>
+  <h1>Atomic Design To-Do List</h1>
   <app-task-list
-    [tasks]="tasks"
+    [tasks]="taskList"
     (taskAdded)="onTaskAdded($event)"
     (taskToggled)="onTaskToggled($event)"
     (taskDeleted)="onTaskDeleted($event)"

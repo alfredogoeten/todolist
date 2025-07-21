@@ -28,13 +28,12 @@ export class TaskService {
     localStorage.setItem('taskState', JSON.stringify(this.state()));
   }
 
-  addTask(name: string, description: string = ''): void {
+  addTask(name: string): void {
     if (!name.trim()) return;
 
     const newTask: Task = {
       id: Date.now().toString(),
       name: name.trim(),
-      description: description.trim(),
       status: TaskStatus.Pending,
       createdAt: Date.now(),
     };
@@ -56,8 +55,7 @@ export class TaskService {
               ...task, 
               status: task.status === TaskStatus.Completed 
                 ? TaskStatus.Pending 
-                : TaskStatus.Completed, 
-              updatedAt: Date.now() 
+                : TaskStatus.Completed
             }
           : task
       )
@@ -71,7 +69,7 @@ export class TaskService {
       ...state,
       tasks: state.tasks.map(task =>
         task.id === id 
-          ? { ...task, ...updates, updatedAt: Date.now() }
+          ? { ...task, ...updates }
           : task
       )
     }));

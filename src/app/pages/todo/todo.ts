@@ -1,7 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { TaskListComponent } from "../../shared/molecules/task-list/task-list";
-import { Task } from "../../shared/models/task.model";
-import { TaskStatus } from "../../shared/models/task.model";
+import { TaskService } from "../../core/services/task.service";
 
 @Component({
   selector: "app-todo",
@@ -11,60 +10,21 @@ import { TaskStatus } from "../../shared/models/task.model";
   styleUrl: "./todo.scss",
 })
 export class Todo {
-  now = Date.now();
-  tasks: Task[] = [
-    {
-      id: "1",
-      name: "Learn Angular",
-      status: TaskStatus.Completed,
-      createdAt: this.now,
-      updatedAt: this.now,
-    },
-    {
-      id: "2",
-      name: "Build a todo app",
-      status: TaskStatus.Pending,
-      createdAt: this.now - 86400000, // 1 day ago
-      updatedAt: this.now - 86400000,
-    },
-    {
-      id: "3",
-      name: "Deploy to production",
-      status: TaskStatus.Pending,
-      description: "Deploy the app to production environment",
-      createdAt: this.now - 172800000, // 2 days ago
-      updatedAt: this.now - 172800000,
-    },
-  ];
+  private taskService = inject(TaskService);
 
-  onTaskAdded(name: string, description?: string): void {
-    const newTask: Task = {
-      id: this.now.toString(),
-      name,
-      status: TaskStatus.Pending,
-      description,
-      createdAt: this.now,
-      updatedAt: this.now,
-    };
-    this.tasks = [...this.tasks, newTask];
+  get taskList() {
+    return this.taskService.tasks().tasks;
+  }
+
+  onTaskAdded(taskName: string): void {
+    this.taskService.addTask(taskName);
   }
 
   onTaskToggled(taskId: string): void {
-    this.tasks = this.tasks.map((task) =>
-      task.id === taskId
-        ? {
-            ...task,
-            status:
-              task.status === TaskStatus.Completed
-                ? TaskStatus.Pending
-                : TaskStatus.Completed,
-            updatedAt: this.now,
-          }
-        : task
-    );
+    this.taskService.toggleTask(taskId);
   }
 
   onTaskDeleted(taskId: string): void {
-    this.tasks = this.tasks.filter((task) => task.id !== taskId);
+    this.taskService.deleteTask(taskId);
   }
 }

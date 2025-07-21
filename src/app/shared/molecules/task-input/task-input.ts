@@ -1,23 +1,23 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { ButtonComponent } from '../../atoms/button/button';
-import { InputComponent } from '../../atoms/input/input';
+import { Component, Output, EventEmitter } from "@angular/core";
+import { ButtonComponent } from "../../atoms/button/button";
+import { InputComponent } from "../../atoms/input/input";
 
 @Component({
-  selector: 'app-task-input',
+  selector: "app-task-input",
   standalone: true,
   imports: [ButtonComponent, InputComponent],
-  templateUrl: './task-input.html',
-  styleUrl: './task-input.css'
+  templateUrl: "./task-input.html",
+  styleUrl: "./task-input.css",
 })
 export class TaskInputComponent {
-  taskName = '';
-  
+  taskName = "";
+
   @Output() addTask = new EventEmitter<string>();
 
   onAddTask(): void {
     if (this.taskName.trim()) {
       this.addTask.emit(this.taskName.trim());
-      this.taskName = '';
+      this.taskName = "";
     }
   }
 
@@ -26,7 +26,7 @@ export class TaskInputComponent {
   }
 
   onKeyUp(event: KeyboardEvent): void {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       this.onAddTask();
     }
   }
