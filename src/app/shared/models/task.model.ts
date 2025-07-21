@@ -13,7 +13,6 @@ export interface Task {
   id: string;
   name: string;
   status: TaskStatus;
-  createdAt: number;
 }
 
 export interface TaskState {

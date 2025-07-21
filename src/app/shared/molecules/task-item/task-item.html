@@ -12,7 +12,9 @@
       {{ task.name }}
     </span>
   </div>
-  <app-button variant="danger" (click)="onDelete()" class="delete-button">
-    Delete
-  </app-button>
+  @if (task.status === taskStatus.Completed) {
+    <app-button variant="danger" (click)="onDelete()" class="delete-button">
+      Delete
+    </app-button>
+  }
 </div>
