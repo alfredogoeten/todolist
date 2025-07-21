@@ -9,6 +9,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class InputComponent {
   @Input() placeholder: string = '';
   @Input() value: string = '';
+  @Input() maxlength: number | null = null;
   
   @Output() valueChange = new EventEmitter<string>();
   @Output() inputChange = new EventEmitter<Event>();

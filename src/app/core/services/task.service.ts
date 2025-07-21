@@ -81,15 +81,6 @@ export class TaskService {
     this.saveState();
   }
 
-  deleteTask(id: string): void {
-    this.state.update((state) => ({
-      ...state,
-      tasks: state.tasks.filter((task) => task.id !== id),
-    }));
-
-    this.saveState();
-  }
-
   setFilter(filter: TaskFilter): void {
     this.state.update((state) => ({
       ...state,

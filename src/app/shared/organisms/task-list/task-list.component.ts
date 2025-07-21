@@ -4,7 +4,6 @@ import { TaskItemComponent } from "../../molecules/task-item/task-item.component
 import { EmptyStateComponent } from "../../../templates/empty-state/empty-state.component";
 import { Task } from "../../models/task.model";
 
-
 @Component({
   selector: "app-task-list",
   standalone: true,
@@ -15,18 +14,9 @@ import { Task } from "../../models/task.model";
 export class TaskListComponent {
   @Input() tasks: Task[] = [];
   @Input() lastAddedTaskId: string | null = null;
-
-  
   @Output() taskToggled = new EventEmitter<string>();
-  @Output() taskDeleted = new EventEmitter<string>();
-
-  
 
   onToggleTask(taskId: string): void {
     this.taskToggled.emit(taskId);
-  }
-
-  onDeleteTask(taskId: string): void {
-    this.taskDeleted.emit(taskId);
   }
 }

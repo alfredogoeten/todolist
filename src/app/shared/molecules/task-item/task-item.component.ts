@@ -57,13 +57,9 @@ export class TaskItemComponent {
   @Input() state!: string | null;
 
   @Output() toggleComplete = new EventEmitter<string>();
-  @Output() delete = new EventEmitter<string>();
+
 
   onToggleComplete(): void {
     this.toggleComplete.emit(this.task.id);
-  }
-
-  onDelete(): void {
-    this.delete.emit(this.task.id);
   }
 }

@@ -1,11 +1,17 @@
 <div class="todo-container">
   <h1>Atomic Design To-Do List</h1>
   <app-task-input (addTask)="onTaskAdded($event)"></app-task-input>
+  @if(hasCompletedTasks()){
+  <div class="button-wrapper">
+    <app-button (clicked)="onClearCompleted()" [variant]="'danger'">
+      <app-icon name="delete"></app-icon>
+    </app-button>
+  </div>
+  }
 
   <app-task-list
     [tasks]="taskList"
     [lastAddedTaskId]="lastAddedTaskId"
     (taskToggled)="onTaskToggled($event)"
-    (taskDeleted)="onTaskDeleted($event)"
   ></app-task-list>
 </div>
