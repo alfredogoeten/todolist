@@ -15,8 +15,13 @@ export class TaskListComponent {
   @Input() tasks: Task[] = [];
   @Input() lastAddedTaskId: string | null = null;
   @Output() taskToggled = new EventEmitter<string>();
+  @Output() taskUpdated = new EventEmitter<{ id: string; newName: string }>();
 
   onToggleTask(taskId: string): void {
     this.taskToggled.emit(taskId);
+  }
+
+  onTaskUpdated(event: { id: string; newName: string }): void {
+    this.taskUpdated.emit(event);
   }
 }

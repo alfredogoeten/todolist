@@ -41,4 +41,8 @@ export class TodoComponent {
   onClearCompleted(): void {
     this.taskService.clearCompleted();
   }
+
+  onTaskUpdated(event: { id: string; newName: string }): void {
+    this.taskService.updateTask(event.id, { name: event.newName });
+  }
 }

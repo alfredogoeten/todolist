@@ -10,8 +10,17 @@
   transition: all 0.2s ease;
 }
 
+.edit-button {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
 .task-item:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+  .edit-button {
+    opacity: 1;
+  }
 }
 
 .task-content {
@@ -30,6 +39,7 @@
   text-overflow: ellipsis;
   flex-grow: 1;
   min-width: 0;
+  padding: 0 10px;
 }
 
 .task-text.completed {
@@ -40,4 +50,21 @@
 .task-checkbox {
   margin: 0;
   flex-shrink: 0;
+}
+
+.task-edit-input {
+  font-size: 1rem;
+  color: #333;
+  border: none;
+  background: transparent;
+  flex-grow: 1;
+  min-width: 0;
+  padding: 0;
+  padding-right: 10px;
+  margin: 0;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 }

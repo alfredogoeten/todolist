@@ -5,11 +5,28 @@
       (checkedChange)="onToggleComplete()"
       class="task-checkbox"
     ></app-checkbox>
+    @if (!isEditing) {
     <span
       class="task-text"
       [class.completed]="task.status === taskStatus.Completed"
     >
       {{ task.name }}
     </span>
+    } @else {
+    <app-input
+      #taskNameInput
+      class="task-edit-input"
+      [value]="task.name"
+      (blur)="onSave()"
+      (keydown.enter)="onSave()"
+      autofocus
+    ></app-input>
+    }
   </div>
+  <app-button
+    class="edit-button"
+    (click)="isEditing ? onSave() : onEdit()"
+  >
+    <app-icon [name]="isEditing ? 'confirm' : 'edit'"></app-icon>
+  </app-button>
 </div>

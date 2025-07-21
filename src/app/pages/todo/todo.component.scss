@@ -24,6 +24,7 @@
   app-task-list {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
     display: block;
     padding-right: 1rem;
   }

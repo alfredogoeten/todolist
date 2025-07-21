@@ -13,5 +13,6 @@
     [tasks]="taskList"
     [lastAddedTaskId]="lastAddedTaskId"
     (taskToggled)="onTaskToggled($event)"
+    (taskUpdated)="onTaskUpdated($event)"
   ></app-task-list>
 </div>
