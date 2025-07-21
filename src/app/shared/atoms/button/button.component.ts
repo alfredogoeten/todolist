@@ -1,20 +1,20 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
-type ButtonType = 'button' | 'submit' | 'reset';
-type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'text';
+type ButtonType = "button" | "submit" | "reset";
+type ButtonVariant = "primary" | "danger";
 
 @Component({
-  selector: 'app-button',
+  selector: "app-button",
   standalone: true,
-  templateUrl: './button.component.html',
-  styleUrl: './button.component.scss'
+  templateUrl: "./button.component.html",
+  styleUrl: "./button.component.scss",
 })
 export class ButtonComponent {
-  @Input() type: ButtonType = 'button';
-  @Input() variant: ButtonVariant = 'primary';
+  @Input() type: ButtonType = "button";
+  @Input() variant: ButtonVariant = "primary";
   @Input() disabled: boolean = false;
   @Input() loading: boolean = false;
-  
+
   @Output() clicked = new EventEmitter<Event>();
 
   onClick(event: Event): void {
@@ -22,8 +22,12 @@ export class ButtonComponent {
       this.clicked.emit(event);
     }
   }
-  
+
   get buttonClasses(): string {
-    return `btn btn-${this.variant} ${this.loading ? 'btn-loading' : ''}`;
+    const variantClassMap = {
+      primary: "uk-button-primary",
+      danger: "uk-button-danger",
+    };
+    return `uk-button ${variantClassMap[this.variant]}`;
   }
 }

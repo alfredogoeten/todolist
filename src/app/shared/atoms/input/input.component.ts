@@ -9,7 +9,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class InputComponent {
   @Input() placeholder: string = '';
   @Input() value: string = '';
-  @Input() disabled: boolean = false;
   
   @Output() valueChange = new EventEmitter<string>();
   @Output() inputChange = new EventEmitter<Event>();
