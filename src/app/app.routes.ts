@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { Todo } from './pages/todo/todo';
+import { TodoComponent } from './pages/todo/todo.component';
 
 export const routes: Routes = [
   {
@@ -9,8 +9,8 @@ export const routes: Routes = [
   },
   {
     path: 'todo',
-    component: Todo,
-    title: 'My Todo List',
+    component: TodoComponent,
+    title: 'Atomic Design To-Do List',
   },
   {
     path: '**',

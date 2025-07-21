@@ -1,15 +1,15 @@
 import { Component, inject } from "@angular/core";
-import { TaskListComponent } from "../../shared/organisms/task-list/task-list";
+import { TaskListComponent } from "../../shared/organisms/task-list/task-list.component";
 import { TaskService } from "../../core/services/task.service";
 
 @Component({
   selector: "app-todo",
   standalone: true,
   imports: [TaskListComponent],
-  templateUrl: "./todo.html",
-  styleUrl: "./todo.scss",
+  templateUrl: "./todo.component.html",
+  styleUrl: "./todo.component.scss",
 })
-export class Todo {
+export class TodoComponent {
   private taskService = inject(TaskService);
 
   get taskList() {

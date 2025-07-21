@@ -2,8 +2,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-checkbox',
   standalone: true,
-  templateUrl: './checkbox.html',
-  styleUrl: './checkbox.css'
+  templateUrl: './checkbox.component.html',
+  styleUrl: './checkbox.component.css'
 })
 export class CheckboxComponent {
   @Input() checked: boolean = false;

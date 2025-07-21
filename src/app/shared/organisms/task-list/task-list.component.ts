@@ -1,18 +1,18 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { TaskItemComponent } from '../../molecules/task-item/task-item';
-import { TaskInputComponent } from '../../molecules/task-input/task-input';
-import { Task } from '../../models/task.model';
+import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { TaskItemComponent } from "../../molecules/task-item/task-item.component";
+import { TaskInputComponent } from "../../molecules/task-input/task-input.component";
+import { Task } from "../../models/task.model";
 
 @Component({
-  selector: 'app-task-list',
+  selector: "app-task-list",
   standalone: true,
   imports: [TaskItemComponent, TaskInputComponent],
-  templateUrl: './task-list.html',
-  styleUrl: './task-list.css'
+  templateUrl: "./task-list.component.html",
+  styleUrl: "./task-list.component.css",
 })
 export class TaskListComponent {
   @Input() tasks: Task[] = [];
-  
+
   @Output() taskAdded = new EventEmitter<string>();
   @Output() taskToggled = new EventEmitter<string>();
   @Output() taskDeleted = new EventEmitter<string>();

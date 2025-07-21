@@ -6,8 +6,8 @@ type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'text';
 @Component({
   selector: 'app-button',
   standalone: true,
-  templateUrl: './button.html',
-  styleUrl: './button.css'
+  templateUrl: './button.component.html',
+  styleUrl: './button.component.css'
 })
 export class ButtonComponent {
   @Input() type: ButtonType = 'button';

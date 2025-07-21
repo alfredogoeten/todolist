@@ -1,13 +1,13 @@
 import { Component, Output, EventEmitter } from "@angular/core";
-import { ButtonComponent } from "../../atoms/button/button";
-import { InputComponent } from "../../atoms/input/input";
+import { ButtonComponent } from "../../atoms/button/button.component";
+import { InputComponent } from "../../atoms/input/input.component";
 
 @Component({
   selector: "app-task-input",
   standalone: true,
   imports: [ButtonComponent, InputComponent],
-  templateUrl: "./task-input.html",
-  styleUrl: "./task-input.css",
+  templateUrl: "./task-input.component.html",
+  styleUrl: "./task-input.component.css",
 })
 export class TaskInputComponent {
   taskName = "";
