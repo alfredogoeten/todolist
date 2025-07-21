@@ -1,0 +1,18 @@
+<div class="task-input-container">
+  <app-input
+    [value]="taskName"
+    (valueChange)="onTaskNameChange($event)"
+    placeholder="Add a new task..."
+    (keyup)="onKeyUp($event)"
+    class="task-input"
+    [maxlength]="60"
+  ></app-input>
+  <app-button 
+    (click)="onAddTask()"
+    [disabled]="!taskName.trim()"
+    class="add-button"
+    aria-label="Add task"
+  >
+    <app-icon name="add"></app-icon>
+  </app-button>
+</div>

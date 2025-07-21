@@ -1,0 +1,16 @@
+<div class="task-list">
+ 
+  
+  <div class="tasks">
+    @for (task of tasks; track task.id) {
+      <app-task-item
+        [task]="task"
+        [state]="task.id === lastAddedTaskId ? 'added' : null"
+        (toggleComplete)="onToggleTask($event)"
+        (updateTask)="onTaskUpdated($event)"
+      ></app-task-item>
+    } @empty {
+      <app-empty-state></app-empty-state>
+    }
+  </div>
+</div>

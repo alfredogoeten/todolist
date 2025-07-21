@@ -1,0 +1,70 @@
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 6vh;
+  padding: 0.75rem 1rem;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.edit-button {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.task-item:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+  .edit-button {
+    opacity: 1;
+  }
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.task-text {
+  font-size: 1rem;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  min-width: 0;
+  padding: 0 10px;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-checkbox {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.task-edit-input {
+  font-size: 1rem;
+  color: #333;
+  border: none;
+  background: transparent;
+  flex-grow: 1;
+  min-width: 0;
+  padding: 0;
+  padding-right: 10px;
+  margin: 0;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
