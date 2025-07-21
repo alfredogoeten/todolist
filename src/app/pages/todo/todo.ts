@@ -1,5 +1,5 @@
 import { Component, inject } from "@angular/core";
-import { TaskListComponent } from "../../shared/molecules/task-list/task-list";
+import { TaskListComponent } from "../../shared/organisms/task-list/task-list";
 import { TaskService } from "../../core/services/task.service";
 
 @Component({
