@@ -35,7 +35,6 @@ export class TaskService {
       id: Date.now().toString(),
       name: name.trim(),
       status: TaskStatus.Pending,
-      createdAt: Date.now(),
     };
 
     this.state.update(state => ({
@@ -64,7 +63,7 @@ export class TaskService {
     this.saveState();
   }
 
-  updateTask(id: string, updates: Partial<Omit<Task, 'id' | 'createdAt'>>): void {
+  updateTask(id: string, updates: Partial<Omit<Task, 'id'>>): void {
     this.state.update(state => ({
       ...state,
       tasks: state.tasks.map(task =>
