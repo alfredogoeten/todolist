@@ -14,6 +14,7 @@ import { Task } from "../../models/task.model";
 })
 export class TaskListComponent {
   @Input() tasks: Task[] = [];
+  @Input() lastAddedTaskId: string | null = null;
 
   
   @Output() taskToggled = new EventEmitter<string>();
