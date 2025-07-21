@@ -12,48 +12,21 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## Atomic Design Architecture
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+This project follows the principles of **Atomic Design**, by breaking down the UI into smaller, reusable components.
+The component hierarchy is organized as follows:
 
-```bash
-ng generate component component-name
-```
+-   **Atoms**: `button`, `checkbox`, `icon`, `input`.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+-   **Molecules**: `task-input` (combines an input and a button), `task-item` (combines a checkbox, an input, a label and a button).
 
-```bash
-ng generate --help
-```
+-   **Organisms**: `task-list` (combines the `task-input` and `task-item` molecules).
 
-## Building
+-   **Templates**: `empty-state` (defines the layout when there are no tasks).
 
-To build the project run:
+-   **Pages**: `todo` (the main page of the application).
 
-```bash
-ng build
-```
+## UI Framework
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project uses **UIkit**, a lightweight and modular front-end framework for web interfaces. It was chosen to speed up the styling of atomic components and to take advantage of its visually appealing icons.
