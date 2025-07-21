@@ -17,8 +17,8 @@ export class TaskListComponent {
   @Output() taskToggled = new EventEmitter<string>();
   @Output() taskDeleted = new EventEmitter<string>();
 
-  onAddTask(name: string): void {
-    this.taskAdded.emit(name);
+  onAddTask(taskName: string): void {
+    this.taskAdded.emit(taskName);
   }
 
   onToggleTask(taskId: string): void {
