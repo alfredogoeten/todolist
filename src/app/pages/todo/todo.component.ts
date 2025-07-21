@@ -1,11 +1,12 @@
 import { Component, inject } from "@angular/core";
 import { TaskListComponent } from "../../shared/organisms/task-list/task-list.component";
+import { TaskInputComponent } from "../../shared/molecules/task-input/task-input.component";
 import { TaskService } from "../../core/services/task.service";
 
 @Component({
   selector: "app-todo",
   standalone: true,
-  imports: [TaskListComponent],
+  imports: [TaskListComponent, TaskInputComponent],
   templateUrl: "./todo.component.html",
   styleUrl: "./todo.component.scss",
 })
