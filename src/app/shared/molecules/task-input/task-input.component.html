@@ -10,7 +10,8 @@
     (click)="onAddTask()"
     [disabled]="!taskName.trim()"
     class="add-button"
+    aria-label="Add task"
   >
-    Add
+    <app-icon name="add"></app-icon>
   </app-button>
 </div>

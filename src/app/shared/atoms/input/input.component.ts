@@ -4,7 +4,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   selector: 'app-input',
   standalone: true,
   templateUrl: './input.component.html',
-  styleUrl: './input.component.css'
+  styleUrl: './input.component.scss'
 })
 export class InputComponent {
   @Input() placeholder: string = '';

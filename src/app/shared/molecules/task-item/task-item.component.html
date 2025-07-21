@@ -14,7 +14,7 @@
   </div>
   @if (task.status === taskStatus.Completed) {
     <app-button variant="danger" (click)="onDelete()" class="delete-button">
-      Delete
+      <app-icon name="delete"></app-icon>
     </app-button>
   }
 </div>
